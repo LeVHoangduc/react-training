@@ -33,6 +33,8 @@ function HOC() {
     <div>
       <h1>My HOC</h1>
       <AuthenticatedUser />
+      {/* Example for passing props to HOC */}
+      {/* <AuthenticatedUser someProp="Hello" /> */}
     </div>
   );
 }
