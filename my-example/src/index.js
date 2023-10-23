@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Array from "./Array";
+import HOC from "./components/HOCexample/HOCexample";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,8 +12,11 @@ root.render(
     {/* Example for thinking in React */}
     {/* <App /> */}
 
-    {/* Example for array in state */}
+    {/* Example for array in state    */}
     <Array />
+
+    {/* Example for HOC               */}
+    <HOC />
   </React.StrictMode>
 );
 
