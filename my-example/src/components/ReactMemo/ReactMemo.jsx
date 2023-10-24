@@ -8,6 +8,15 @@ function MyComponent(props) {
 
 // Wrap MyComponent with React.memo
 const MemoizedMyComponent = React.memo(MyComponent);
+const MemoizedMyComponent2 = React.memo(MyComponent, equal);
+
+function equal(prevProps, nextProps) {
+  if (prevProps.value === nextProps.value) return true;
+  return false;
+}
+
+// React.memo() memoizes the rendered output of MyComponent based on its props.
+// When the count state changes, MyComponent will only re-render if its value prop changes
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -20,9 +29,7 @@ function App() {
     <div>
       <button onClick={incrementCount}>Increment Count</button>
       <MemoizedMyComponent value={count} />
-      <div>
-        <h1>title</h1>
-      </div>
+      <MemoizedMyComponent2 value={count} />
     </div>
   );
 }
