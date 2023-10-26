@@ -5,6 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Array from "./Array";
 import HOC from "./components/HOCexample/HOCexample";
+import UseMemoExample from "./components/ReactMemo/UseMemoExample";
+import StateExample from "./components/StateExample/StateExample";
+import StateExampleCombine from "./components/StateExample/StateExampleCombine";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,10 +16,17 @@ root.render(
     {/* <App /> */}
 
     {/* Example for array in state    */}
-    <Array />
+    {/* <Array /> */}
 
     {/* Example for HOC               */}
-    <HOC />
+    {/* <HOC /> */}
+
+    {/* Example for useMemo           */}
+    <UseMemoExample />
+
+    {/* Example for state problems           */}
+    {/* <StateExample /> */}
+    {/* <StateExampleCombine /> */}
   </React.StrictMode>
 );
 
