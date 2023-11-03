@@ -27,9 +27,9 @@ module.exports = {
     }
   },
   rules: {
-    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    'react-refresh/only-export-components': ['error', { allowConstantExport: true }],
     'prettier/prettier': [
-      'warn',
+      'error',
       {
         arrowParens: 'always',
         semi: false,
