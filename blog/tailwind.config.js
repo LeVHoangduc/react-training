@@ -2,16 +2,21 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      tablet: '608px',
+      laptop: '768px',
+      desktop: '928px'
+    },
+
     extend: {
       maxWidth: {
         '38rem': '38rem'
       },
       width: {
-        '180x': '180px',
-        'custom-xl': '360px'
+        '180px': '180px'
       },
       height: {
-        '180x': '180px'
+        '180px': '180px'
       },
       colors: {
         'custom-white': '#ffffff',
