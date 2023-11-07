@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar {
+  @apply px-4 py-8 bg-custom-dark-gray text-center laptop:w-72 laptop:text-left laptop:overflow-y-auto laptop:top-0 laptop:bottom-0 laptop:left-0 laptop:fixed;
+}

@@ -1,11 +1,14 @@
 import SideBar from './SideBar/SideBar'
 
-import React from 'react'
+interface Props {
+  children?: React.ReactNode
+}
 
-export default function MainLayout() {
+export default function MainLayout({ children }: Props) {
   return (
-    <div className='flex flex-col h-full md:flex-row'>
+    <div className='flex flex-col h-full laptop:flex-row'>
       <SideBar />
+      <main>{children}</main>
     </div>
   )
 }

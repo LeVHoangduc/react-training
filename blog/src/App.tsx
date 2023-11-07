@@ -1,9 +1,12 @@
-import MainLayout from './layouts/MainLayout'
+import './App.css'
 
-import React from 'react'
+import MainLayout from './layouts/MainLayout'
+import useRouteElements from './useRouteElements'
 
 function App() {
-  return <MainLayout />
+  const routeElements = useRouteElements()
+
+  return <MainLayout>{routeElements}</MainLayout>
 }
 
 export default App

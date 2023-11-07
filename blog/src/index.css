@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+a,
+p {
+  @apply font-fira;
+}
+
+@media (min-width: 608px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #464646;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: 0 0;
+    border-radius: 10px;
+  }
+}
