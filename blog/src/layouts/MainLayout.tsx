@@ -6,9 +6,9 @@ interface Props {
 
 export default function MainLayout({ children }: Props) {
   return (
-    <div className='flex flex-col h-full laptop:flex-row'>
+    <div className='laptop:grid laptop:grid-cols-[18rem]'>
       <SideBar />
-      <main>{children}</main>
+      <main className='laptop:col-start-2'>{children}</main>
     </div>
   )
 }

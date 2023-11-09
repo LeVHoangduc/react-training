@@ -14,7 +14,7 @@ export default function SideBar() {
             <img
               src='/assets/images/me.jpg'
               alt='brand'
-              className='w-180px h-180px ml-auto mr-auto mb-4 border-2 border-custom-light-black rounded-full text-center cursor-pointer'
+              className='w-[180px] h-[180px] ml-auto mr-auto mb-4 border-2 border-custom-light-black rounded-full text-center object-cover cursor-pointer'
             />
           </a>
           <a href='https://poison.lukeorth.com/'>
