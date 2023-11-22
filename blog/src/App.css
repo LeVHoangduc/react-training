@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply font-fira;
+}
+
 .sidebar {
   @apply px-4 py-8 bg-custom-dark-gray text-center laptop:w-72 laptop:text-left laptop:overflow-y-auto laptop:top-0 laptop:bottom-0 laptop:left-0 laptop:fixed;
+}
+
+.custom-after {
+  background-image: radial-gradient(circle, currentcolor 1px, transparent 1.5px);
+  background-position: bottom;
+  background-size: 1ex 3.5px;
+  background-repeat: space no-repeat;
+  content: '';
+  flex-grow: 1;
+  height: 1.1em;
+  width: 1em;
+  order: 2;
+  color: #9d9d9d;
+}
+
+.custom-markdown h2,
+.custom-markdown p,
+.custom-markdown li {
+  @apply font-fira text-custom-white;
+}
+
+.custom-markdown h2 {
+  @apply text-2xl mt-4 mb-2;
+}
+
+.custom-markdown ul {
+  @apply list-disc;
+}
+
+.custom-markdown li,
+.custom-markdown p {
+  @apply mb-4 text-custom-light;
 }
