@@ -13,11 +13,7 @@ html {
 
 body {
   height: 100vh;
-}
-
-a,
-p {
-  @apply font-fira;
+  background-color: #121212;
 }
 
 @media (min-width: 608px) {

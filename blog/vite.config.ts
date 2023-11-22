@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   css: {
     devSourcemap: true
-  }
+  },
+  assetsInclude: ['**/*.md']
 })
