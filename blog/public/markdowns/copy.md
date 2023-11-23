@@ -1,11 +1,8 @@
 ---
 title: How to install ReactJS
 author: geeksforgeeks
-link: https://www.geeksforgeeks.org/how-to-install-reactjs-on-windows/
 date: 2012-11-10
-image: https://bom.so/keyfZM
 tags: Front end, React
-description: React JS -React is an open-source component-based front-end JavaScript library. It is used to create fast and interactive user interfaces for web and mobile applications
 ---
 ​
 

@@ -1,9 +1,7 @@
 ---
 title: How to install ReactJS
 author: geeksforgeeks
-link: https://www.geeksforgeeks.org/how-to-install-reactjs-on-windows/
 date: 2022-11-10
-image: https://bom.so/keyfZM
 tags: Front end, React
 ---
 ​
