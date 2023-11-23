@@ -28,8 +28,14 @@ const getPosts = () => {
     if (err) {
       return console.log('Failed to list contents of directory: ' + err)
     }
+
     files.forEach((file, i) => {
+      console.log('before', i)
       fs.readFile(`${dirPath}/${file}`, 'utf-8', (err, contents) => {
+        if (err) {
+          return console.log('Failed to list file of files: ' + err)
+        }
+
         let jsonData = markdownToJSON(contents)
 
         jsonData = {
@@ -38,15 +44,16 @@ const getPosts = () => {
         }
 
         postList.push(jsonData)
+        console.log(postList.length)
 
-        if (i === files.length - 1) {
+        if (postList.length === files.length) {
           const sortedList = postList.sort((a, b) => {
             const yearA = getYear(a)
             const yearB = getYear(b)
 
             return yearA < yearB ? 1 : -1
           })
-          console.log(sortedList)
+          console.log('list', sortedList.length)
           let data = JSON.stringify(sortedList)
           fs.writeFileSync('src/Jsons/posts.json', data)
         }

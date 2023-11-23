@@ -6,7 +6,6 @@ function markdownToJSON(markdown) {
     date: '',
     image: '',
     tags: [],
-    description: '',
     content: ''
   }
 
@@ -31,8 +30,6 @@ function markdownToJSON(markdown) {
       data.image = getValueFromLine(trimmedLine)
     } else if (trimmedLine.startsWith('tags:')) {
       data.tags = getArrayValueFromLine(trimmedLine)
-    } else if (trimmedLine.startsWith('description:')) {
-      data.description = getValueFromLine(trimmedLine)
     } else {
       // Assuming features are listed as bullet points under this heading
       data.content = data.content + '\n' + trimmedLine
