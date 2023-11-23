@@ -1,5 +1,5 @@
 import './App.css'
-import postList from '../src/Jsons/posts.json'
+import postList from '../data/jsons/posts.json'
 
 import MainLayout from './layouts/MainLayout'
 import useRouteElements from './useRouteElements'

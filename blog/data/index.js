@@ -6,8 +6,8 @@ import markdownToJSON from './markdownToJson.js'
 const __filename = fileURLToPath(import.meta.url)
 
 const __dirname = path.dirname(__filename)
-console.log(__dirname)
-const dirPath = path.join(__dirname, '../posts/markdowns')
+
+const dirPath = path.join(__dirname, '../data/markdowns')
 
 let postList = []
 
@@ -44,7 +44,6 @@ const getPosts = () => {
         }
 
         postList.push(jsonData)
-        console.log(postList.length)
 
         if (postList.length === files.length) {
           const sortedList = postList.sort((a, b) => {
@@ -53,9 +52,8 @@ const getPosts = () => {
 
             return yearA < yearB ? 1 : -1
           })
-          console.log('list', sortedList.length)
           let data = JSON.stringify(sortedList)
-          fs.writeFileSync('src/Jsons/posts.json', data)
+          fs.writeFileSync('data/jsons/posts.json', data)
         }
       })
     })
