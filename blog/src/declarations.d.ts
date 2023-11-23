@@ -3,7 +3,7 @@ declare module '*.md' {
   export default content
 }
 
-declare module '../posts/Jsons/posts.json' {
+declare module '../src/Jsons/posts.json' {
   const content: Json // Replace YourType with the actual type of your JSON content
   export default content
 }
