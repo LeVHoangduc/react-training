@@ -2,10 +2,15 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 
 import PostContext from '../../contexts/postContext'
+import { MarkdownData } from 'App'
+
+interface PostsProps {
+  tag: string | null
+}
 
 type yearCurrent = string | null
 
-export default function Posts() {
+export default function Posts({ tag }: PostsProps) {
   const postContext = useContext(PostContext)
 
   if (!postContext) {
@@ -14,10 +19,18 @@ export default function Posts() {
 
   const { posts } = postContext
 
+  let postsData: MarkdownData[] = []
+
+  if (tag) {
+    postsData = posts?.filter((post) => post.tags.some((postTag) => postTag === tag)) as MarkdownData[]
+  } else {
+    postsData = posts as MarkdownData[]
+  }
+
   const postData: JSX.Element[] = []
 
   let yearCurrent: yearCurrent = null
-  posts?.map((post, i) => {
+  postsData?.map((post, i) => {
     // Your date string
     const dateString = post.date
 
@@ -50,7 +63,7 @@ export default function Posts() {
 
   return (
     <div>
-      <p className='mt-5 mb-2 text-[2rem] text-custom-white'>Posts</p>
+      <p className='mt-5 mb-2 text-[2rem] text-custom-white'>{`${tag ? 'Related post with ' + tag : 'Posts'}`}</p>
 
       <ul className='tablet:pl-8'>{postData}</ul>
     </div>

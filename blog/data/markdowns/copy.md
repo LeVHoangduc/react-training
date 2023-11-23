@@ -2,7 +2,7 @@
 title: How to install ReactJS
 author: geeksforgeeks
 date: 2012-11-10
-tags: Front end, React
+tags: Frontend, React
 ---
 ​
 

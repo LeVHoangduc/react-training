@@ -1,8 +1,8 @@
 ---
 title: How to install ReactJS
 author: geeksforgeeks
-date: 2024-11-10
-tags: Front end, React
+date: 2022-11-10
+tags: Django, Python
 ---
 ​
 

@@ -19,8 +19,6 @@ export default function CodeBlock({ children }: CodeProps) {
     return () => clearTimeout(timer)
   }, [copied])
 
-  console.log(children)
-
   return (
     <div className='relative'>
       <>

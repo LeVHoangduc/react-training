@@ -1,9 +1,8 @@
 import { useRoutes } from 'react-router-dom'
 
-import PostWrapper from './components/PostWrapper'
-
-import Posts from './pages/Posts/Posts'
 import About from './pages/About/About'
+import PostsWrapper from './components/PostsWrapper'
+import PostWrapper from './components/PostWrapper'
 
 export default function useRouteElements() {
   const elements = useRoutes([
@@ -17,7 +16,7 @@ export default function useRouteElements() {
     },
     {
       path: '/posts',
-      element: <Posts />
+      element: <PostsWrapper />
     },
     {
       path: '/post/:id',

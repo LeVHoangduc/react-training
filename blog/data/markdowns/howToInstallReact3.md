@@ -2,7 +2,7 @@
 title: How to install ReactJS
 author: geeksforgeeks
 date: 2019-11-10
-tags: Front end, React
+tags: backend, nodejs
 ---
 ​
 

@@ -9,11 +9,9 @@ import PostContext, { PostContextData } from './contexts/postContext'
 export interface MarkdownData {
   title: string
   author: string
-  link: string
   date: string
   image: string
   tags: string[]
-  description: string
   content: string
   id: number
 }

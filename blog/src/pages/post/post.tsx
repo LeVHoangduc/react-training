@@ -62,7 +62,7 @@ export default function Post({ postId }: PostProps) {
         <ul>
           {postContent.tags.map((tag, i) => (
             <li key={i} className='inline-block ml-3 px-[0.7rem] bg-custom-gray rounded-[0.2rem] cursor-pointer'>
-              <Link to='/about' className='text-[0.7rem] text-custom-black text-center'>
+              <Link to={`/posts?tag=${tag}`} className='text-[0.7rem] text-custom-black text-center'>
                 {tag}
               </Link>
             </li>
