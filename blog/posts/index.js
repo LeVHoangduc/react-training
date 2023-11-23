@@ -55,7 +55,7 @@ const getPosts = () => {
           })
           console.log('list', sortedList.length)
           let data = JSON.stringify(sortedList)
-          fs.writeFileSync('src/Jsons/posts.json', data)
+          fs.writeFileSync('posts/Jsons/posts.json', data)
         }
       })
     })
