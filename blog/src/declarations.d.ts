@@ -4,6 +4,6 @@ declare module '*.md' {
 }
 
 declare module '../src/Jsons/posts.json' {
-  const content: Json // Replace YourType with the actual type of your JSON content
-  export default content
+  const postList: Json // Replace YourType with the actual type of your JSON content
+  export default postList
 }
