@@ -10,16 +10,16 @@ export default function SideBar() {
           </button>
         </div>
         <div className='text-center'>
-          <a href='https://poison.lukeorth.com/'>
+          <Link to='https://blogtechnologique.netlify.app/'>
             <img
               src='/assets/images/me.jpg'
               alt='brand'
               className='w-[180px] h-[180px] ml-auto mr-auto mb-4 border-2 border-custom-light-black rounded-full text-center object-cover cursor-pointer'
             />
-          </a>
-          <a href='https://poison.lukeorth.com/'>
+          </Link>
+          <Link to='https://blogtechnologique.netlify.app/'>
             <h1 className='mb-2 text-4xl leading-tight font-light font-abril text-custom-white'>Le Vu Hoang Duc</h1>
-          </a>
+          </Link>
           <p className='mb-4 font-light font-fira text-xl text-custom-medium-gray'>
             Hi 👋 I have a great motivation to learn about new technologies and scientific research o.o
           </p>
