@@ -29,7 +29,7 @@ export default function Posts() {
 
     if (String(year) !== yearCurrent) {
       postData.push(
-        <h3 key={year} className='text-center text-2xl text-custom-white mt-6 mb-2'>
+        <h3 key={year} className='laptop:text-xl desktop:text-2xl mt-6 mb-2 text-2xl text-custom-white text-center'>
           {year}
         </h3>
       )
@@ -50,21 +50,9 @@ export default function Posts() {
 
   return (
     <div>
-      <h1 className='text-[2rem] text-custom-white'>Posts</h1>
+      <p className='mt-5 mb-2 text-[2rem] text-custom-white'>Posts</p>
 
-      <ul className='pl-8'>
-        {/* <h3 className='text-center text-2xl text-custom-white mt-6 mb-2'>2022</h3>
-        {posts?.map((post, index) => (
-          <li key={index} className='flex'>
-            <span className='order-1 text-custom-blue'>
-              <Link to={`/post/${post.id}`}>{post.title}</Link>
-            </span>
-            <span className='custom-after'></span>
-            <span className='order-3 text-custom-gray'>{post.date}</span>
-          </li>
-        ))} */}
-        {postData}
-      </ul>
+      <ul className='tablet:pl-8'>{postData}</ul>
     </div>
   )
 }
