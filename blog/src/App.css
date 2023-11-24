@@ -2,12 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply h-screen bg-custom-white;
+}
+
+.dark-theme {
+  @apply h-screen bg-custom-black;
+}
+
 html {
   @apply font-fira;
 }
 
+.main-layout {
+  @apply laptop:grid laptop:grid-cols-layout laptop:h-screen;
+}
+
+.main-layout.light {
+  @apply bg-custom-light;
+}
+
 .sidebar {
   @apply px-4 py-8 bg-custom-dark-gray text-center laptop:w-72 laptop:text-left laptop:overflow-y-auto laptop:top-0 laptop:bottom-0 laptop:left-0 laptop:fixed;
+}
+
+.content-wrapper {
+  @apply laptop:col-start-2 desktop:max-w-[44rem] tablet:mx-8 tablet:pr-8 max-w-[38rem] py-8 px-4 extraDesktop:h-screen extraDesktop:overflow-y-auto;
+}
+
+.custom-markdown h2 {
+  @apply text-2xl text-custom-white mt-4 mb-2;
+}
+
+.custom-markdown ul {
+  @apply list-disc;
+}
+
+.custom-markdown li,
+.custom-markdown p {
+  @apply mb-4 text-custom-light;
+}
+
+.custom-markdown.light li,
+.custom-markdown.light p,
+.custom-markdown.light h2 {
+  @apply text-custom-dark-gray;
 }
 
 .custom-after {
@@ -21,27 +60,4 @@ html {
   width: 1em;
   order: 2;
   color: #9d9d9d;
-}
-
-.custom-markdown h2,
-.custom-markdown p,
-.custom-markdown li {
-  @apply font-fira text-custom-white;
-}
-
-.custom-markdown h2 {
-  @apply text-2xl mt-4 mb-2;
-}
-
-.custom-markdown ul {
-  @apply list-disc;
-}
-
-.custom-markdown li,
-.custom-markdown p {
-  @apply mb-4 text-custom-light;
-}
-
-.mainLayout {
-  @apply laptop:grid laptop:grid-cols-layout;
 }

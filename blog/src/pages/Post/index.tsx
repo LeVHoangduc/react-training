@@ -7,6 +7,7 @@ import { MarkdownData } from 'App'
 import PostContext from '../../contexts/postContext'
 import CodeBlock from '../../components/CodeBlock'
 import TOC from '../../components/TOC'
+import ThemeContext from '../../contexts/themeContext'
 
 interface PostProps {
   postId: string
@@ -14,8 +15,12 @@ interface PostProps {
 
 export default function Post({ postId }: PostProps) {
   const postContext = useContext(PostContext)
+  const themeContext = useContext(ThemeContext)
+
   const [loading, setLoading] = useState<boolean>(true)
   const [postContent, setPostContent] = useState<MarkdownData | null>(null)
+
+  const classContainer = themeContext?.isDark ? '.mainLayout-dark' : '.mainLayout'
 
   useEffect(() => {
     if (postContext) {
@@ -49,7 +54,9 @@ export default function Post({ postId }: PostProps) {
 
   return (
     <>
-      <p className='mb-2 text-custom-white text-[2rem]'>{postContent.title}</p>
+      <p className={`mb-2 text-[2rem] ${themeContext?.isDark ? 'text-custom-white' : 'text-custom-black'}`}>
+        {postContent.title}
+      </p>
       <div className='flex flex-row items-center justify-between mb-4'>
         <p className='text-custom-light-gray'>{postContent.date}</p>
         <ul>
@@ -62,10 +69,10 @@ export default function Post({ postId }: PostProps) {
           ))}
         </ul>
       </div>
-      <ReactMarkdown className='custom-markdown' components={components}>
+      <ReactMarkdown className={`custom-markdown ${themeContext?.isDark ? '' : 'light'}`} components={components}>
         {postContent.content}
       </ReactMarkdown>
-      {createPortal(<TOC selector='.content' />, document.querySelector('.mainLayout') as HTMLElement)}
+      {/* {createPortal(<TOC selector='.content' />, document.querySelector(classContainer) as HTMLElement)} */}
     </>
   )
 }

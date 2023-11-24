@@ -5,6 +5,7 @@ import MainLayout from './layouts/MainLayout'
 import useRouteElements from './useRouteElements'
 import { useEffect, useState } from 'react'
 import PostContext, { PostContextData } from './contexts/postContext'
+import ThemeContext from './contexts/themeContext'
 
 export interface MarkdownData {
   title: string
@@ -20,6 +21,14 @@ function App() {
   const routeElements = useRouteElements()
 
   const [posts, setPosts] = useState<MarkdownData[] | null>(null)
+  const [isDark, setIsDark] = useState(true)
+
+  console.log(isDark)
+
+  const value = {
+    isDark,
+    setIsDark
+  }
 
   useEffect(() => {
     const handleData = () => {
@@ -28,14 +37,20 @@ function App() {
     handleData()
   }, [])
 
+  useEffect(() => {
+    document.body.classList.toggle('dark-theme', isDark)
+  }, [isDark])
+
   const contextValue: PostContextData = {
     posts
   }
 
   return (
-    <PostContext.Provider value={contextValue}>
-      <MainLayout>{routeElements}</MainLayout>
-    </PostContext.Provider>
+    <ThemeContext.Provider value={value}>
+      <PostContext.Provider value={contextValue}>
+        <MainLayout>{routeElements}</MainLayout>
+      </PostContext.Provider>
+    </ThemeContext.Provider>
   )
 }
 

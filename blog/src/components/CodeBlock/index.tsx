@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { materialDark, materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import copyIcon from '../../../public/assets/icons/copyIcon.svg'
 import pasteIcon from '../../../public/assets/icons/pasteIcon.svg'
+import ThemeContext from '../../contexts/themeContext'
 
 interface CodeProps {
   children: string
@@ -12,6 +13,7 @@ interface CodeProps {
 
 export default function CodeBlock({ children }: CodeProps) {
   const [copied, setCopied] = useState(false)
+  const themeContext = useContext(ThemeContext)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,7 +28,7 @@ export default function CodeBlock({ children }: CodeProps) {
         <CopyToClipboard text={children.toString()} onCopy={() => setCopied(true)}>
           <img src={`${copied ? pasteIcon : copyIcon}`} alt='icon' className='w-6 absolute top-4 right-4 z-10' />
         </CopyToClipboard>
-        <SyntaxHighlighter language='Javascript' style={materialDark}>
+        <SyntaxHighlighter language='Javascript' style={themeContext?.isDark ? materialDark : materialLight}>
           {children}
         </SyntaxHighlighter>
       </>

@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import PostContext from '../../contexts/postContext'
+import ThemeContext from '../../contexts/themeContext'
+
 import { MarkdownData } from 'App'
 
 interface PostsProps {
@@ -12,6 +14,7 @@ type yearCurrent = string | null
 
 export default function Posts({ tag }: PostsProps) {
   const postContext = useContext(PostContext)
+  const themeContext = useContext(ThemeContext)
 
   if (!postContext) {
     return <>Not page</>
@@ -42,7 +45,12 @@ export default function Posts({ tag }: PostsProps) {
 
     if (String(year) !== yearCurrent) {
       postData.push(
-        <h3 key={year} className='laptop:text-xl desktop:text-2xl mt-6 mb-2 text-2xl text-custom-white text-center'>
+        <h3
+          key={year}
+          className={`laptop:text-xl desktop:text-2xl mt-6 mb-2 text-2xl text-center ${
+            themeContext?.isDark ? 'text-custom-white' : 'text-custom-dark'
+          } `}
+        >
           {year}
         </h3>
       )
@@ -63,7 +71,9 @@ export default function Posts({ tag }: PostsProps) {
 
   return (
     <div>
-      <p className='mt-5 mb-2 text-[2rem] text-custom-white'>{`${tag ? 'Related post with ' + tag : 'Posts'}`}</p>
+      <p className={`mt-5 mb-2 text-[2rem] ${themeContext?.isDark ? 'text-custom-white' : 'text-custom-dark'}`}>{`${
+        tag ? 'Related post with ' + tag : 'Posts'
+      }`}</p>
 
       <ul className='tablet:pl-8'>{postData}</ul>
     </div>

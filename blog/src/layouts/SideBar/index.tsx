@@ -1,12 +1,27 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
+import ThemeContext from '../../contexts/themeContext'
+
+import sun from '../../../public/assets/icons/sun.svg'
+import moon from '../../../public/assets/icons/moon.svg'
+
 export default function SideBar() {
+  const themContext = useContext(ThemeContext)
+
+  const handleSetDark = () => {
+    themContext?.setIsDark(!themContext.isDark)
+  }
+
   return (
     <aside className='sidebar'>
       <div className='max-w-38rem px-4 laptop:w-64'>
         <div className='flex justify-end'>
-          <button className='m-4 p-0 w-10 h-10 bg-custom-light-black border-none rounded-full text-center cursor-pointer float-right'>
-            <img src='/assets/icons/sun.svg' alt='sun' className='block m-auto w-5 h-5' />
+          <button
+            onClick={handleSetDark}
+            className='m-4 p-0 w-10 h-10 bg-custom-light-black border-none rounded-full text-center cursor-pointer float-right'
+          >
+            <img src={`${themContext?.isDark ? sun : moon}`} alt='sun' className='block m-auto w-5 h-5' />
           </button>
         </div>
         <div className='text-center'>

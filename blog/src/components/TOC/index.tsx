@@ -8,6 +8,8 @@ export default function TOC({ selector }: TOCprops) {
   const [currentHeadingID, setCurrentHeadingID] = useState<string | undefined>()
   const [headings, setHeadings] = useState<HTMLHeadElement[]>([])
 
+  const content = document.querySelector(selector)?.parentElement
+
   // collect all heading
   useEffect(() => {
     const headingNodeList = document
@@ -34,7 +36,7 @@ export default function TOC({ selector }: TOCprops) {
         })
       },
       {
-        rootMargin: '0% 0% -60% 0%',
+        rootMargin: '0% 0% -90% 0%',
         threshold: 1
       }
     )
@@ -63,12 +65,13 @@ export default function TOC({ selector }: TOCprops) {
               data-id={heading.dataset.id}
               style={{ paddingLeft: +tagLevel * 7 + 'px' }}
               onClick={() => {
-                window.scrollTo({
+                content?.scrollTo({
                   top: heading.getBoundingClientRect().top + window.scrollY,
                   behavior: 'smooth'
                 })
+                console.log(heading.getBoundingClientRect().top + window.scrollY)
               }}
-              className={`flex w-full my-1 py-2 pr-2 text-lg font-light text-custom-light-gray rounded-lg cursor-pointer ${
+              className={`flex my-1 py-2 pr-2 text-lg font-light text-custom-light-gray rounded-lg cursor-pointer ${
                 currentHeadingID === heading.dataset.id
                   ? 'bg-custom-dark-blue text-custom-white'
                   : 'hover:bg-custom-dark-blue hover:text-custom-white'
