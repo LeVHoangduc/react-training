@@ -2,7 +2,7 @@ import { useRoutes } from 'react-router-dom'
 
 import About from './pages/About/About'
 import PostsWrapper from './components/PostsWrapper'
-import PostWrapper from './components/PostWrapper'
+import PostWrapper from './components/PostWrapper/PostWrapper'
 
 export default function useRouteElements() {
   const elements = useRoutes([

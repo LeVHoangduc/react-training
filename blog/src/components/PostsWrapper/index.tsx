@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom'
 
-import Posts from '../pages/Posts/Posts'
+import Posts from '../../pages/Posts/Posts'
 
 export default function PostWrapper() {
   const location = useLocation()
