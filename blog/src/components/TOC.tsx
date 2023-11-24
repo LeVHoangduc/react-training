@@ -34,7 +34,6 @@ export default function TOC({ selector }: TOCprops) {
         })
       },
       {
-        // should play with this numbers to see what is best for app
         rootMargin: '0% 0% -60% 0%',
         threshold: 1
       }
@@ -49,7 +48,7 @@ export default function TOC({ selector }: TOCprops) {
     return () => {
       return observer.disconnect()
     }
-  }, [headings.length])
+  }, [headings, headings.length])
 
   return (
     <div className='extraDesktop:block hidden mt-20 '>
