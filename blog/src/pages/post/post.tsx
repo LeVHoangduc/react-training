@@ -1,23 +1,16 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import { createPortal } from 'react-dom'
 
-import PostContext from '../../contexts/postContext'
 import { MarkdownData } from 'App'
+import PostContext from '../../contexts/postContext'
 import CodeBlock from '../../components/CodeBlock'
+import TOC from '../../components/TOC'
 
 interface PostProps {
   postId: string
 }
-
-// type Components = Partial<{
-//   [TagName in keyof JSX.IntrinsicElements]:  // Class component:
-//     | (new (props: JSX.IntrinsicElements[TagName] & ExtraProps) => JSX.ElementClass)
-//     // Function component:
-//     | ((props: JSX.IntrinsicElements[TagName] & ExtraProps) => JSX.Element | string | null | undefined)
-//     // Tag name:
-//     | keyof JSX.IntrinsicElements
-// }>
 
 export default function Post({ postId }: PostProps) {
   const postContext = useContext(PostContext)
@@ -72,6 +65,7 @@ export default function Post({ postId }: PostProps) {
       <ReactMarkdown className='custom-markdown' components={components}>
         {postContent.content}
       </ReactMarkdown>
+      {createPortal(<TOC selector='.content' />, document.querySelector('.mainLayout') as HTMLElement)}
     </>
   )
 }

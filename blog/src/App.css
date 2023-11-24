@@ -41,3 +41,7 @@ html {
 .custom-markdown p {
   @apply mb-4 text-custom-light;
 }
+
+.mainLayout {
+  @apply laptop:grid laptop:grid-cols-layout;
+}

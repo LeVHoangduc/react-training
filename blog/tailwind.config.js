@@ -5,11 +5,15 @@ export default {
     screens: {
       tablet: '608px',
       laptop: '768px',
-      desktop: '928px'
+      desktop: '928px',
+      extraDesktop: '1800px'
     },
     extend: {
       maxWidth: {
         '38rem': '38rem'
+      },
+      gridTemplateColumns: {
+        layout: '18rem 48rem 1fr'
       },
       colors: {
         'custom-white': '#ffffff',
@@ -21,7 +25,8 @@ export default {
         'custom-medium-gray': '#909090', //     --sidebar-p-color
         'custom-light-gray': '#9a9a9a', // --date-color
         'custom-light-white': '#DBE2E9', // --title-color-dark-theme
-        'custom-light-black': '#515151'
+        'custom-light-black': '#515151',
+        'custom-dark-blue': '#081b4b'
       },
       fontFamily: {
         fira: ['fira sans', 'sans-serif'],
