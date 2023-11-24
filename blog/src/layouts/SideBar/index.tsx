@@ -12,7 +12,7 @@ export default function SideBar() {
         <div className='text-center'>
           <Link to='https://blogtechnologique.netlify.app/'>
             <img
-              src='/assets/images/me.jpg'
+              src='/assets/images/avatar.jpg'
               alt='brand'
               className='w-[180px] h-[180px] ml-auto mr-auto mb-4 border-2 border-custom-light-black rounded-full text-center object-cover cursor-pointer'
             />
