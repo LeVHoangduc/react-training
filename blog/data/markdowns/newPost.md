@@ -1,7 +1,7 @@
 ---
 title: How to create new post
 author: Duc Le
-date: 2012-11-10
+date: 2012-11-08
 tags: newPost
 ---
 ​

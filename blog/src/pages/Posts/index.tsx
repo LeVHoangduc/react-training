@@ -8,11 +8,12 @@ import { MarkdownData } from 'App'
 
 interface PostsProps {
   tag: string | null
+  filter?: string | null
 }
 
 type yearCurrent = string | null
 
-export default function Posts({ tag }: PostsProps) {
+export default function Posts({ tag, filter }: PostsProps) {
   const postContext = useContext(PostContext)
   const themeContext = useContext(ThemeContext)
 
@@ -26,6 +27,8 @@ export default function Posts({ tag }: PostsProps) {
 
   if (tag) {
     postsData = posts?.filter((post) => post.tags.some((postTag) => postTag === tag)) as MarkdownData[]
+  } else if (filter) {
+    postsData = posts?.slice(0, 5) as MarkdownData[]
   } else {
     postsData = posts as MarkdownData[]
   }

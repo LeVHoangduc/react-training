@@ -11,18 +11,6 @@ const dirPath = path.join(__dirname, '../data/markdowns')
 
 let postList = []
 
-const getYear = (data) => {
-  const dateString = data.date
-
-  // Create a Date object by parsing the date string
-  const dateObject = new Date(dateString)
-
-  // Get the year from the Date object
-  const year = dateObject.getFullYear()
-
-  return year
-}
-
 const getPosts = () => {
   fs.readdir(dirPath, (err, files) => {
     if (err) {
@@ -47,8 +35,8 @@ const getPosts = () => {
 
         if (postList.length === files.length) {
           const sortedList = postList.sort((a, b) => {
-            const yearA = getYear(a)
-            const yearB = getYear(b)
+            const yearA = new Date(a.date).getTime()
+            const yearB = new Date(b.date).getTime()
 
             return yearA < yearB ? 1 : -1
           })

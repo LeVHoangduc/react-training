@@ -48,7 +48,9 @@ export default function SideBar() {
               <Link to='/posts/'>Posts</Link>
             </li>
 
-            <li className='font-normal text-custom-medium-gray hover:underline laptop:ml-4'>Recent</li>
+            <li className='font-normal text-custom-medium-gray hover:underline laptop:ml-4'>
+              <Link to='/recent'>Recent</Link>
+            </li>
 
             <li className=' text-custom-white hover:underline laptop:ml-4'>
               <Link to='/posts/introduction'>Introducing Le</Link>

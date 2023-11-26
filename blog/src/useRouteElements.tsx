@@ -19,6 +19,10 @@ export default function useRouteElements() {
       element: <PostsWrapper />
     },
     {
+      path: '/recent',
+      element: <PostsWrapper filter='recent' />
+    },
+    {
       path: '/post/:id',
       element: <PostWrapper />
     }

@@ -1,7 +1,7 @@
 ---
 title: How to install ReactJS
 author: geeksforgeeks
-date: 2022-11-10
+date: 2022-12-18
 tags: Backend, Python
 ---
 ​
