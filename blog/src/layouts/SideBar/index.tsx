@@ -2,9 +2,7 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import ThemeContext from '../../contexts/themeContext'
-
-import sun from '../../../public/assets/icons/sun.svg'
-import moon from '../../../public/assets/icons/moon.svg'
+import { sun, moon } from '../../constants/assets'
 
 export default function SideBar() {
   const themContext = useContext(ThemeContext)

@@ -5,9 +5,9 @@ import { createPortal } from 'react-dom'
 
 import { MarkdownData } from 'App'
 import PostContext from '../../contexts/postContext'
+import ThemeContext from '../../contexts/themeContext'
 import CodeBlock from '../../components/CodeBlock'
 import TOC from '../../components/TOC'
-import ThemeContext from '../../contexts/themeContext'
 
 interface PostProps {
   postId: string

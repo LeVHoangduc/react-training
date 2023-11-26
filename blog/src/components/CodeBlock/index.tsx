@@ -3,10 +3,8 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { materialDark, materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-import copyIcon from '../../../public/assets/icons/copyIcon.svg'
-import pasteIcon from '../../../public/assets/icons/pasteIcon.svg'
 import ThemeContext from '../../contexts/themeContext'
-
+import { copyIcon, pasteIcon } from '../../constants/assets'
 interface CodeProps {
   children: string
 }
