@@ -8,6 +8,7 @@ import PostContext from '../../contexts/postContext'
 import ThemeContext from '../../contexts/themeContext'
 import CodeBlock from '../../components/CodeBlock'
 import TOC from '../../components/TOC'
+import ShareButton from '../../components/ShareButton'
 
 interface PostProps {
   postId: string
@@ -73,6 +74,9 @@ export default function Post({ postId }: PostProps) {
         {postContent.content}
       </ReactMarkdown>
       {createPortal(<TOC selector='.content' />, document.querySelector(classContainer) as HTMLElement)}
+      <div>
+        <ShareButton>share</ShareButton>
+      </div>
     </>
   )
 }
