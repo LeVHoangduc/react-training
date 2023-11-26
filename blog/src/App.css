@@ -27,7 +27,7 @@ html {
 }
 
 .content-wrapper {
-  @apply tablet:mx-8 tablet:pr-8 laptop:col-start-2 desktop:max-w-[44rem] extraDesktop:overflow-y-auto py-8 px-4 max-w-[38rem];
+  @apply tablet:mx-8 tablet:pr-8 laptop:col-start-2 desktop:max-w-[44rem] extraDesktop:overflow-y-auto py-8 px-4 max-w-[38rem] overflow-hidden;
 }
 
 .custom-markdown h2 {
