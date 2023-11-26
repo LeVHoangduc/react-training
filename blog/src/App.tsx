@@ -8,6 +8,7 @@ import MainLayout from './layouts/MainLayout'
 
 import PostContext, { PostContextData } from './contexts/postContext'
 import ThemeContext from './contexts/themeContext'
+import { FacebookProvider } from 'react-facebook'
 
 export interface MarkdownData {
   title: string
@@ -50,7 +51,9 @@ function App() {
   return (
     <ThemeContext.Provider value={value}>
       <PostContext.Provider value={contextValue}>
-        <MainLayout>{routeElements}</MainLayout>
+        <FacebookProvider appId='1302726233707586'>
+          <MainLayout>{routeElements}</MainLayout>
+        </FacebookProvider>
       </PostContext.Provider>
     </ThemeContext.Provider>
   )

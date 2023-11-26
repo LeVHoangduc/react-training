@@ -243,7 +243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.3.1":
+"@babel/runtime@npm:^7.20.6, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.3.1":
   version: 7.23.4
   resolution: "@babel/runtime@npm:7.23.4"
   dependencies:
@@ -1429,6 +1429,7 @@ __metadata:
     react: ^18.2.0
     react-copy-to-clipboard: ^5.1.0
     react-dom: ^18.2.0
+    react-facebook: ^9.0.12
     react-markdown: ^9.0.0
     react-router-dom: ^6.18.0
     react-syntax-highlighter: ^15.5.0
@@ -5015,6 +5016,17 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
   checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
+  languageName: node
+  linkType: hard
+
+"react-facebook@npm:^9.0.12":
+  version: 9.0.12
+  resolution: "react-facebook@npm:9.0.12"
+  dependencies:
+    "@babel/runtime": ^7.20.6
+  peerDependencies:
+    react: ">= 16"
+  checksum: b97c0f8f18d79d1173f944bed707f7b47fe01efaf37aee90bab5c6da8ad0f8015f51e7d7094c03cda38de8819269e825d835a74cef754fb4c22b34344f48a310
   languageName: node
   linkType: hard
 
