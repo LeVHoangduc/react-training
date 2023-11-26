@@ -1,9 +1,11 @@
 import './App.css'
 import postList from '../data/jsons/posts.json'
 
-import MainLayout from './layouts/MainLayout'
-import useRouteElements from './useRouteElements'
 import { useEffect, useState } from 'react'
+import useRouteElements from './useRouteElements'
+
+import MainLayout from './layouts/MainLayout'
+
 import PostContext, { PostContextData } from './contexts/postContext'
 import ThemeContext from './contexts/themeContext'
 

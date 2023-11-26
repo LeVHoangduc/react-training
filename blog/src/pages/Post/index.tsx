@@ -20,7 +20,7 @@ export default function Post({ postId }: PostProps) {
   const [loading, setLoading] = useState<boolean>(true)
   const [postContent, setPostContent] = useState<MarkdownData | null>(null)
 
-  const classContainer = themeContext?.isDark ? '.mainLayout-dark' : '.mainLayout'
+  const classContainer = '.main-layout'
 
   useEffect(() => {
     if (postContext) {
@@ -72,7 +72,7 @@ export default function Post({ postId }: PostProps) {
       <ReactMarkdown className={`custom-markdown ${themeContext?.isDark ? '' : 'light'}`} components={components}>
         {postContent.content}
       </ReactMarkdown>
-      {/* {createPortal(<TOC selector='.content' />, document.querySelector(classContainer) as HTMLElement)} */}
+      {createPortal(<TOC selector='.content' />, document.querySelector(classContainer) as HTMLElement)}
     </>
   )
 }

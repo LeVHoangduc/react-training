@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
+import ThemeContext from '../../contexts/themeContext'
 interface TOCprops {
   selector: string
 }
@@ -7,6 +8,8 @@ interface TOCprops {
 export default function TOC({ selector }: TOCprops) {
   const [currentHeadingID, setCurrentHeadingID] = useState<string | undefined>()
   const [headings, setHeadings] = useState<HTMLHeadElement[]>([])
+
+  const themeContext = useContext(ThemeContext)
 
   const content = document.querySelector(selector)?.parentElement
 
@@ -55,7 +58,9 @@ export default function TOC({ selector }: TOCprops) {
   return (
     <div className='extraDesktop:block hidden mt-20 '>
       <div className='p-4 h-full overflow-scroll'>
-        <p className='text-2xl font-normal text-custom-light'>Contents</p>
+        <p className={`text-2xl font-normal ${themeContext?.isDark ? 'text-custom-light' : 'text-custom-black'}`}>
+          Contents
+        </p>
         {headings.map((heading) => {
           const tagLevel = heading.tagName.match(/(\d+)/)?.[0] || '1'
 
@@ -71,11 +76,9 @@ export default function TOC({ selector }: TOCprops) {
                 })
                 console.log(heading.getBoundingClientRect().top + window.scrollY)
               }}
-              className={`flex my-1 py-2 pr-2 text-lg font-light text-custom-light-gray rounded-lg cursor-pointer ${
-                currentHeadingID === heading.dataset.id
-                  ? 'bg-custom-dark-blue text-custom-white'
-                  : 'hover:bg-custom-dark-blue hover:text-custom-white'
-              }`}
+              className={`flex my-1 py-2 pr-2 text-[0.9rem] font-light rounded-lg cursor-pointer ${
+                currentHeadingID === heading.dataset.id ? 'font-bold' : 'hover:font-bold'
+              } ${themeContext?.isDark ? 'text-custom-light' : 'text-custom-black'}`}
             >
               {heading.innerHTML}
             </button>

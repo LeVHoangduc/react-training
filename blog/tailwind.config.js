@@ -6,25 +6,25 @@ export default {
       tablet: '608px',
       laptop: '768px',
       desktop: '928px',
-      extraDesktop: '1800px'
+      extraDesktop: '1600px'
     },
     extend: {
       maxWidth: {
         '38rem': '38rem'
       },
       gridTemplateColumns: {
-        layout: '18rem 48rem 1fr'
+        extraDesktop: '18rem 48rem 1fr'
       },
       colors: {
         'custom-white': '#ffffff',
         'custom-black': '#121212',
         'custom-gray': '#9d9d9d',
         'custom-blue': '#268bd2',
-        'custom-light': '#eeeeee', // --strong-color
-        'custom-dark-gray': '#202020', //--sidebar-bg-color
-        'custom-medium-gray': '#909090', //     --sidebar-p-color
-        'custom-light-gray': '#9a9a9a', // --date-color
-        'custom-light-white': '#DBE2E9', // --title-color-dark-theme
+        'custom-light': '#eeeeee',
+        'custom-dark-gray': '#202020',
+        'custom-medium-gray': '#909090',
+        'custom-light-gray': '#9a9a9a',
+        'custom-light-white': '#DBE2E9',
         'custom-light-black': '#515151',
         'custom-dark-blue': '#081b4b'
       },

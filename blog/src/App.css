@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply h-screen bg-custom-white;
+  @apply h-screen bg-custom-light;
 }
 
 .dark-theme {
@@ -15,7 +15,7 @@ html {
 }
 
 .main-layout {
-  @apply laptop:grid laptop:grid-cols-layout laptop:h-screen;
+  @apply laptop:grid laptop:grid-cols-[18rem] laptop:h-screen extraDesktop:grid-cols-extraDesktop;
 }
 
 .main-layout.light {
@@ -23,11 +23,11 @@ html {
 }
 
 .sidebar {
-  @apply px-4 py-8 bg-custom-dark-gray text-center laptop:w-72 laptop:text-left laptop:overflow-y-auto laptop:top-0 laptop:bottom-0 laptop:left-0 laptop:fixed;
+  @apply laptop:w-72 laptop:text-left laptop:overflow-y-auto laptop:top-0 laptop:bottom-0 laptop:left-0 laptop:fixed px-4 py-8 bg-custom-dark-gray text-center;
 }
 
 .content-wrapper {
-  @apply laptop:col-start-2 desktop:max-w-[44rem] tablet:mx-8 tablet:pr-8 max-w-[38rem] py-8 px-4 extraDesktop:h-screen extraDesktop:overflow-y-auto;
+  @apply tablet:mx-8 tablet:pr-8 max-w-[38rem] laptop:col-start-2 desktop:max-w-[44rem] extraDesktop:h-screen extraDesktop:overflow-y-auto py-8 px-4;
 }
 
 .custom-markdown h2 {
