@@ -4,8 +4,7 @@ import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { materialDark, materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import ThemeContext from '../../contexts/themeContext'
-import copyIcon from '../assets/icons/copyIcon.svg'
-import pasteIcon from '../assets/icons/pasteIcon.svg'
+import { copyIcon, pasteIcon } from '../../constants/assets'
 
 interface CodeProps {
   children: string
