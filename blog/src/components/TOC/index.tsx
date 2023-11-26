@@ -76,8 +76,8 @@ export default function TOC({ selector }: TOCprops) {
                 })
                 console.log(heading.getBoundingClientRect().top + window.scrollY)
               }}
-              className={`flex my-1 py-2 pr-2 text-[0.9rem] font-light rounded-lg cursor-pointer ${
-                currentHeadingID === heading.dataset.id ? 'font-bold' : 'hover:font-bold'
+              className={`flex my-1 py-2 pr-2 text-[0.9rem] rounded-lg cursor-pointer hover:font-bold ${
+                currentHeadingID === heading.dataset.id ? 'font-bold' : 'font-light'
               } ${themeContext?.isDark ? 'text-custom-light' : 'text-custom-black'}`}
             >
               {heading.innerHTML}

@@ -1,7 +1,7 @@
 import { useShare } from 'react-facebook'
 
 export interface ShareButtonProps {
-  children: string
+  children: React.ReactNode
 }
 
 export default function ShareButton({ children }: ShareButtonProps) {

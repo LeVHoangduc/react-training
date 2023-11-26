@@ -8,7 +8,8 @@ import PostContext from '../../contexts/postContext'
 import ThemeContext from '../../contexts/themeContext'
 import CodeBlock from '../../components/CodeBlock'
 import TOC from '../../components/TOC'
-import ShareButton from '../../components/ShareButton'
+import LikeButton from '../../components/LikeButton'
+import CommentButton from '../../components/CommentButton'
 
 interface PostProps {
   postId: string
@@ -20,6 +21,8 @@ export default function Post({ postId }: PostProps) {
 
   const [loading, setLoading] = useState<boolean>(true)
   const [postContent, setPostContent] = useState<MarkdownData | null>(null)
+
+  const currentURL = window.location.href
 
   const classContainer = '.main-layout'
 
@@ -74,8 +77,11 @@ export default function Post({ postId }: PostProps) {
         {postContent.content}
       </ReactMarkdown>
       {createPortal(<TOC selector='.content' />, document.querySelector(classContainer) as HTMLElement)}
-      <div>
-        <ShareButton>share</ShareButton>
+      <div className={`p-4 rounded-md ${themeContext?.isDark ? 'bg-white' : ''}`}>
+        <div className='flex gap-4'>
+          <LikeButton className={'flex'} href={currentURL} />
+        </div>
+        <CommentButton />
       </div>
     </>
   )
