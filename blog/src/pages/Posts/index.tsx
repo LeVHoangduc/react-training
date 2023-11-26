@@ -35,6 +35,12 @@ export default function Posts({ tag, filter }: PostsProps) {
 
   const postData: JSX.Element[] = []
 
+  let titlePage = 'Posts'
+
+  if (tag) titlePage = `Related post with ${tag}`
+
+  if (filter) titlePage = 'Recent post'
+
   let yearCurrent: yearCurrent = null
   postsData?.map((post, i) => {
     // Your date string
@@ -74,9 +80,9 @@ export default function Posts({ tag, filter }: PostsProps) {
 
   return (
     <div>
-      <p className={`mt-5 mb-2 text-[2rem] ${themeContext?.isDark ? 'text-custom-white' : 'text-custom-dark'}`}>{`${
-        tag ? 'Related post with ' + tag : 'Posts'
-      }`}</p>
+      <p className={`mt-5 mb-2 text-[2rem] ${themeContext?.isDark ? 'text-custom-white' : 'text-custom-dark'}`}>
+        {titlePage}
+      </p>
 
       <ul className='tablet:pl-8'>{postData}</ul>
     </div>
