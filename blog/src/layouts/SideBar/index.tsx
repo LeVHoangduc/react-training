@@ -53,7 +53,7 @@ export default function SideBar() {
             </li>
 
             <li className=' text-custom-white hover:underline laptop:ml-4'>
-              <Link to='/posts/introduction'>Introducing Le</Link>
+              <Link to='/'>Introducing Le</Link>
             </li>
           </ul>
         </nav>

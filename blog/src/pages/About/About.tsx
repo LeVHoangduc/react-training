@@ -7,43 +7,46 @@ export default function About() {
 
   return (
     <div className={`custom-markdown ${themeContext?.isDark ? '' : 'light'}`}>
-      <h1 className={`mb-2 text-[2rem] ${themeContext?.isDark ? 'text-custom-white' : 'text-custom-black'}`}>About</h1>
+      <h1 className={`mb-2 text-[2rem] ${themeContext?.isDark ? 'text-custom-white' : 'text-custom-black'}`}>
+        About my blog
+      </h1>
       <hr />
       <p>
         <em>
-          Words kill, words give life; they’re either <strong>poison</strong> or fruit—you choose.
+          In the vast realm of technology, where innovation is the heartbeat, we invite you to explore a world of
+          ideas—where words aren't just expressions, but catalysts for understanding the digital landscape.
         </em>
       </p>
       <p>
-        <em>— Proverbs 18:21</em>
+        <em>— Embrace the Future with Us</em>
       </p>
       <hr />
       <p>
-        <em>Poison</em> is a <strong>clean</strong>, <strong>professional</strong> Hugo theme designed to{' '}
-        <strong>captivate</strong> your readers.
+        Here at our technology blog, we pride ourselves on being at the intersection of two dynamic realms:{' '}
+        <strong>Web Application Development</strong> and <strong>Signal Processing</strong>. Our mission is to unravel
+        the intricacies of these domains and illuminate the path forward.
       </p>
       <p>
-        It’s also <strong>tiny</strong> and <strong>privacy conscious</strong> with <em>no external dependencies</em>.
-        That’s right—no JavaScript frameworks, icon packs, or Google fonts. No ads or trackers polluting your console
-        window (try it out and take a look). <strong>We kept things simple</strong>. A little vanilla JavaScript, a dash
-        of CSS, and the power of Hugo.
+        <strong>Web Applications:</strong> Step into the world where user interfaces meet functionality, and where the
+        web becomes a canvas for innovation. Our articles delve into the latest frameworks, tools, and design principles
+        that shape modern web applications. Whether you're a developer seeking practical insights or a business owner
+        navigating the digital landscape, we have you covered.
       </p>
       <p>
-        All of the static assets for the site (JS files, CSS, and fonts) are located within the theme’s{' '}
-        <em>/static/</em> directory.{' '}
-        <strong>
-          That way you know <em>exactly</em> what’s going on your site
-        </strong>
-        .
+        <strong>Signal Processing:</strong> Venture into the fascinating realm where data transforms into meaningful
+        insights. Signal processing is the backbone of technologies that power communication, audio processing, and
+        beyond. From fundamental concepts to advanced applications, our content demystifies signal processing, making it
+        accessible to both beginners and experts.
       </p>
       <p>
-        To get started, I recommend reading through my introductory post{' '}
-        <a href='https://poison.lukeorth.com/posts/introducing-poison/'>here</a>. I use this theme on my personal site
-        at{' '}
-        <a href='https://lukeorth.com' target='_blank'>
-          https://lukeorth.com
-        </a>
-        , so check it out if you want to see <em>Poison</em> in action.
+        But this blog is more than just insights; it's a community. We invite you to join the conversation, ask
+        questions, and share your experiences. Together, let's explore how the fusion of web applications and signal
+        processing is shaping the digital landscape.
+      </p>
+      <p>
+        Whether you're passionate about creating seamless user experiences or intrigued by the magic happening behind
+        the scenes, our blog is your go-to resource. From tutorials and case studies to thought-provoking analyses,
+        embark on a journey where technology converges with creativity.
       </p>
     </div>
   )
