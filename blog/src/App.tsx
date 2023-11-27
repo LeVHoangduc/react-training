@@ -2,13 +2,13 @@ import './App.css'
 import postList from '../data/jsons/posts.json'
 
 import { useEffect, useState } from 'react'
+import { FacebookProvider } from 'react-facebook'
 import useRouteElements from './useRouteElements'
 
 import MainLayout from './layouts/MainLayout'
 
 import PostContext, { PostContextData } from './contexts/postContext'
 import ThemeContext from './contexts/themeContext'
-import { FacebookProvider } from 'react-facebook'
 
 export interface MarkdownData {
   title: string
@@ -25,8 +25,6 @@ function App() {
 
   const [posts, setPosts] = useState<MarkdownData[] | null>(null)
   const [isDark, setIsDark] = useState(true)
-
-  console.log(isDark)
 
   const value = {
     isDark,

@@ -31,9 +31,7 @@ export default function Post({ postId }: PostProps) {
       const { posts } = postContext
       const data = posts?.find((post) => post.id === Number(postId))
 
-      if (data) {
-        setPostContent(data)
-      }
+      if (data) setPostContent(data)
 
       setTimeout(() => {
         setLoading(false)
@@ -41,13 +39,10 @@ export default function Post({ postId }: PostProps) {
     }
   }, [postContext, postId])
 
-  if (loading) {
-    return <>Loading....</>
-  }
+  if (loading) return <>Loading....</>
 
-  if (!postContent) {
-    return <Navigate to='/404' />
-  }
+  if (!postContent) return <Navigate to='/404' />
+
   const components = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     code: ({ children, ...props }: any) => {

@@ -5,6 +5,7 @@ import PostContext from '../../contexts/postContext'
 import ThemeContext from '../../contexts/themeContext'
 
 import { MarkdownData } from 'App'
+import Error from '../Error'
 
 interface PostsProps {
   tag: string | null
@@ -18,7 +19,7 @@ export default function Posts({ tag, filter }: PostsProps) {
   const themeContext = useContext(ThemeContext)
 
   if (!postContext) {
-    return <>Not page</>
+    return <Error />
   }
 
   const { posts } = postContext

@@ -1,9 +1,10 @@
 import { useRoutes } from 'react-router-dom'
 
-import About from './pages/About/About'
-import Introduction from './pages/Introduction'
 import PostsWrapper from './components/PostsWrapper'
 import PostWrapper from './components/PostWrapper'
+import About from './pages/About/About'
+import Introduction from './pages/Introduction'
+import Error from './pages/Error'
 
 export default function useRouteElements() {
   const elements = useRoutes([
@@ -26,6 +27,10 @@ export default function useRouteElements() {
     {
       path: '/post/:id',
       element: <PostWrapper />
+    },
+    {
+      path: '/404',
+      element: <Error />
     }
   ])
 
