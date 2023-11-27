@@ -1,1 +1,3 @@
-# AgilityIO_Training_Course
+# React training
+
+- Move to the blog folder for more information
