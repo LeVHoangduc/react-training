@@ -6,9 +6,8 @@ import { FacebookProvider } from 'react-facebook'
 import useRouteElements from './hooks/useRouteElements'
 
 import MainLayout from './layouts/MainLayout'
-
-import PostContext, { PostContextData } from './contexts/postContext'
-import ThemeContext from './contexts/themeContext'
+import PostContext, { PostContextData } from '@contexts/postContext'
+import ThemeContext from '@contexts/themeContext'
 
 export interface MarkdownData {
   title: string
