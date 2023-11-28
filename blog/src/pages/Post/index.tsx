@@ -1,17 +1,18 @@
-import { MarkdownData } from 'App'
+import { MarkdownData } from 'src/App'
 
 import { useContext, useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { createPortal } from 'react-dom'
-import useTheme from '../../hooks/useTheme'
 
-import PostContext from '../../contexts/postContext'
+import useTheme from '@hooks/useTheme'
 
-import CodeBlock from '../../components/CodeBlock'
-import TOC from '../../components/TOC'
-import LikeButton from '../../components/LikeButton'
-import CommentButton from '../../components/CommentButton'
+import PostContext from '@contexts/postContext'
+
+import CodeBlock from '@components/CodeBlock'
+import CommentButton from '@components/CommentButton'
+import LikeButton from '@components/LikeButton'
+import TOC from '@components/TOC'
 
 interface PostProps {
   postId: string
