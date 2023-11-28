@@ -1,10 +1,12 @@
+import { MarkdownData } from 'App'
+
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import PostContext from '../../contexts/postContext'
-import ThemeContext from '../../contexts/themeContext'
+import useTheme from '../../hooks/useTheme'
 
-import { MarkdownData } from 'App'
+import PostContext from '../../contexts/postContext'
+
 import Error from '../Error'
 
 interface PostsProps {
@@ -16,7 +18,8 @@ type yearCurrent = string | null
 
 export default function Posts({ tag, filter }: PostsProps) {
   const postContext = useContext(PostContext)
-  const themeContext = useContext(ThemeContext)
+
+  const { isDark } = useTheme()
 
   if (!postContext) {
     return <Error />
@@ -58,7 +61,7 @@ export default function Posts({ tag, filter }: PostsProps) {
         <h3
           key={year}
           className={`laptop:text-xl desktop:text-2xl mt-6 mb-2 text-2xl text-center ${
-            themeContext?.isDark ? 'text-custom-white' : 'text-custom-dark'
+            isDark ? 'text-custom-white' : 'text-custom-dark'
           } `}
         >
           {year}
@@ -81,9 +84,7 @@ export default function Posts({ tag, filter }: PostsProps) {
 
   return (
     <div>
-      <p className={`mt-5 mb-2 text-[2rem] ${themeContext?.isDark ? 'text-custom-white' : 'text-custom-dark'}`}>
-        {titlePage}
-      </p>
+      <p className={`mt-5 mb-2 text-[2rem] ${isDark ? 'text-custom-white' : 'text-custom-dark'}`}>{titlePage}</p>
 
       <ul className='tablet:pl-8'>{postData}</ul>
     </div>

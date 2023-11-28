@@ -1,17 +1,16 @@
-import { useContext } from 'react'
 import SideBar from './SideBar'
 
-import ThemeContext from '../contexts/themeContext'
+import useTheme from '../hooks/useTheme'
 
 interface Props {
   children?: React.ReactNode
 }
 
 export default function MainLayout({ children }: Props) {
-  const themeContext = useContext(ThemeContext)
+  const { isDark } = useTheme()
 
   return (
-    <div className={`main-layout ${themeContext?.isDark ? '' : 'light'}`}>
+    <div className={`main-layout ${isDark ? '' : 'light'}`}>
       <SideBar />
       <main className='content-wrapper'>
         <div className='content'>{children}</div>

@@ -1,11 +1,13 @@
+import { MarkdownData } from 'App'
+
 import { useContext, useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { createPortal } from 'react-dom'
+import useTheme from '../../hooks/useTheme'
 
-import { MarkdownData } from 'App'
 import PostContext from '../../contexts/postContext'
-import ThemeContext from '../../contexts/themeContext'
+
 import CodeBlock from '../../components/CodeBlock'
 import TOC from '../../components/TOC'
 import LikeButton from '../../components/LikeButton'
@@ -17,10 +19,11 @@ interface PostProps {
 
 export default function Post({ postId }: PostProps) {
   const postContext = useContext(PostContext)
-  const themeContext = useContext(ThemeContext)
 
   const [loading, setLoading] = useState<boolean>(true)
   const [postContent, setPostContent] = useState<MarkdownData | null>(null)
+
+  const { isDark } = useTheme()
 
   const currentURL = window.location.href
 
@@ -53,9 +56,7 @@ export default function Post({ postId }: PostProps) {
 
   return (
     <>
-      <p className={`mb-2 text-[2rem] ${themeContext?.isDark ? 'text-custom-white' : 'text-custom-black'}`}>
-        {postContent.title}
-      </p>
+      <p className={`mb-2 text-[2rem] ${isDark ? 'text-custom-white' : 'text-custom-black'}`}>{postContent.title}</p>
       <div className='flex flex-row items-center justify-between mb-4'>
         <p className='text-custom-light-gray'>{postContent.date}</p>
         <ul>
@@ -68,11 +69,11 @@ export default function Post({ postId }: PostProps) {
           ))}
         </ul>
       </div>
-      <ReactMarkdown className={`custom-markdown ${themeContext?.isDark ? '' : 'light'}`} components={components}>
+      <ReactMarkdown className={`custom-markdown ${isDark ? '' : 'light'}`} components={components}>
         {postContent.content}
       </ReactMarkdown>
       {createPortal(<TOC selector='.content' />, document.querySelector(classContainer) as HTMLElement)}
-      <div className={`p-4 rounded-md ${themeContext?.isDark ? 'bg-white' : ''}`}>
+      <div className={`p-4 rounded-md ${isDark ? 'bg-white' : ''}`}>
         <div className='flex gap-4'>
           <LikeButton className={'flex'} href={currentURL} />
         </div>

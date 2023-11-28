@@ -1,14 +1,12 @@
-import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-
-import ThemeContext from '../../contexts/themeContext'
+import useTheme from '../../hooks/useTheme'
 import { sun, moon } from '../../constants/assets'
 
 export default function SideBar() {
-  const themContext = useContext(ThemeContext)
+  const { isDark, setIsDark } = useTheme()
 
   const handleSetDark = () => {
-    themContext?.setIsDark(!themContext.isDark)
+    setIsDark(!isDark)
   }
 
   return (
@@ -19,7 +17,7 @@ export default function SideBar() {
             onClick={handleSetDark}
             className='m-4 p-0 w-10 h-10 bg-custom-light-black border-none rounded-full text-center cursor-pointer float-right'
           >
-            <img src={`${themContext?.isDark ? sun : moon}`} alt='sun' className='block m-auto w-5 h-5' />
+            <img src={`${isDark ? sun : moon}`} alt='sun' className='block m-auto w-5 h-5' />
           </button>
         </div>
         <div className='text-center'>

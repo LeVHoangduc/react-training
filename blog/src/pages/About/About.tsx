@@ -1,15 +1,11 @@
-import { useContext } from 'react'
-
-import ThemeContext from '../../contexts/themeContext'
+import useTheme from '../../hooks/useTheme'
 
 export default function About() {
-  const themeContext = useContext(ThemeContext)
+  const { isDark } = useTheme()
 
   return (
-    <div className={`custom-markdown ${themeContext?.isDark ? '' : 'light'}`}>
-      <h1 className={`mb-2 text-[2rem] ${themeContext?.isDark ? 'text-custom-white' : 'text-custom-black'}`}>
-        About my blog
-      </h1>
+    <div className={`custom-markdown ${isDark ? '' : 'light'}`}>
+      <h1 className={`mb-2 text-[2rem] ${isDark ? 'text-custom-white' : 'text-custom-black'}`}>About my blog</h1>
       <hr />
       <p>
         <em>
