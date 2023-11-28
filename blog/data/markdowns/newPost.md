@@ -1,8 +1,8 @@
 ---
-title: How to create new post
+title: How to create react app
 author: Duc Le
 date: 2012-11-08
-tags: newPost
+tags: React, Frontend
 ---
 ​
 

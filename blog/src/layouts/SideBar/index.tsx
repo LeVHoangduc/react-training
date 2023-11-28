@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import useTheme from '../../hooks/useTheme'
 import { sun, moon } from '../../constants/assets'
 
@@ -47,11 +47,15 @@ export default function SideBar() {
             </li>
 
             <li className='font-normal text-custom-medium-gray hover:underline laptop:ml-4'>
-              <Link to='/recent'>Recent</Link>
+              <NavLink to='/recent' className={({ isActive }) => (isActive ? 'text-custom-gray' : 'text-custom-white')}>
+                Recent
+              </NavLink>
             </li>
 
             <li className=' text-custom-white hover:underline laptop:ml-4'>
-              <Link to='/'>Introducing Le</Link>
+              <NavLink to='/' className={({ isActive }) => (isActive ? 'text-custom-gray' : 'text-custom-white')}>
+                Introducing Le
+              </NavLink>
             </li>
           </ul>
         </nav>
