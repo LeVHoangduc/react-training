@@ -1,6 +1,5 @@
+import useTheme from '@hooks/useTheme'
 import SideBar from './SideBar'
-
-import useTheme from '../hooks/useTheme'
 
 interface Props {
   children?: React.ReactNode

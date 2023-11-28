@@ -1,6 +1,6 @@
-import useTheme from '../../hooks/useTheme'
+import useTheme from '@hooks/useTheme'
 
-export default function Error() {
+export default function ErrorPage() {
   const { isDark } = useTheme()
 
   return (

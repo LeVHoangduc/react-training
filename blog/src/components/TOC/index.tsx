@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
+import useTheme from '@hooks/useTheme'
 
-import useTheme from '../../hooks/useTheme'
 interface TOCprops {
   selector: string
 }

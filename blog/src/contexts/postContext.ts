@@ -1,4 +1,4 @@
-import { MarkdownData } from 'App'
+import { MarkdownData } from 'src/App'
 import { createContext } from 'react'
 
 export interface PostContextData {

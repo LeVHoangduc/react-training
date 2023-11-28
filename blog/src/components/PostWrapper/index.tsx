@@ -1,6 +1,5 @@
 import { useParams, Navigate } from 'react-router-dom'
-
-import Post from '../../pages/Post'
+import Post from '@pages/Post'
 
 export default function PostWrapper() {
   const { id } = useParams()

@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
-import useTheme from '../../hooks/useTheme'
-import { sun, moon } from '../../constants/assets'
+
+import useTheme from '@hooks/useTheme'
+import { moon, sun } from '@constants/assets'
 
 export default function SideBar() {
   const { isDark, setIsDark } = useTheme()

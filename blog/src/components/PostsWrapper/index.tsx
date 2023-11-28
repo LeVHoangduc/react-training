@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router-dom'
-
-import Posts from '../../pages/Posts'
+import Posts from '@pages/Posts'
 
 interface PostWrapperProps {
   filter?: string
