@@ -49,9 +49,9 @@ export default function Post({ postId }: PostProps) {
 
   const components = {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    code: ({ children, ...props }: any) => {
+    code: ({ children, className }: any) => {
       // Use your CodeBlock component here
-      return <CodeBlock {...props}>{children}</CodeBlock>
+      return <CodeBlock className={className}>{children}</CodeBlock>
     }
   }
 
