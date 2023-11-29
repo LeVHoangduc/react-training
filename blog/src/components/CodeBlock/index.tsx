@@ -16,7 +16,7 @@ export default function CodeBlock({ children, className }: CodeProps) {
   const { isDark } = useTheme()
 
   const language = className ? className.replace(/language-/, '') : ''
-  console.log(language)
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopied(false)
