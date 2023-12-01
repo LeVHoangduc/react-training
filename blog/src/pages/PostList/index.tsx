@@ -1,11 +1,11 @@
 import { useLocation } from 'react-router-dom'
 import Posts from '@components/Posts'
 
-interface PostWrapperProps {
+interface PostListProps {
   filter?: string
 }
 
-export default function PostWrapper({ filter }: PostWrapperProps) {
+export default function PostList({ filter }: PostListProps) {
   const location = useLocation()
   const searchParams = new URLSearchParams(location.search)
 

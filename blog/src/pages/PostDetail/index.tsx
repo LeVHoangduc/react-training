@@ -1,7 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom'
-import Post from '@components/PostWrapper'
+import Post from '@components/Post'
 
-export default function PostWrapper() {
+export default function PostDetail() {
   const { id } = useParams()
 
   if (!id) return <Navigate to='about' />
