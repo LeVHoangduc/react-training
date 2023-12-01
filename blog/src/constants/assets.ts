@@ -1,0 +1,7 @@
+export const copyIcon = '/assets/icons/copyIcon.svg'
+export const pasteIcon = '/assets/icons/pasteIcon.svg'
+export const sun = '/assets/icons/sun.svg'
+export const moon = '/assets/icons/moon.svg'
+export const like = '/assets/icons/like.svg'
+export const share = '/assets/icons/share.svg'
+export const comment = '/assets/icons/comment.svg'

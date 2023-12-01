@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply h-screen bg-custom-light;
+}
+
+.dark-theme {
+  @apply h-screen bg-custom-black;
+}
+
+html {
+  @apply font-fira;
+}
+
+.main-layout {
+  @apply laptop:grid laptop:grid-cols-[18rem] laptop:h-screen extraDesktop:grid-cols-extraDesktop;
+}
+
+.main-layout.light {
+  @apply bg-custom-light;
+}
+
+.sidebar {
+  @apply laptop:w-72 laptop:text-left laptop:overflow-y-auto laptop:top-0 laptop:bottom-0 laptop:left-0 laptop:fixed px-4 py-8 bg-custom-dark-gray text-center;
+}
+
+.content-wrapper {
+  @apply tablet:mx-8 tablet:pr-8 laptop:col-start-2 desktop:max-w-[44rem] extraDesktop:overflow-y-auto py-8 px-4 max-w-[38rem] overflow-hidden overflow-y-auto;
+}
+
+.custom-markdown h2 {
+  @apply text-2xl text-custom-white mt-4 mb-2;
+}
+
+.custom-markdown ul {
+  @apply list-disc;
+}
+
+.custom-markdown li,
+.custom-markdown p {
+  @apply mb-4 text-custom-light;
+}
+
+.custom-markdown.light li,
+.custom-markdown.light p,
+.custom-markdown.light h2 {
+  @apply text-custom-dark-gray;
+}
+
+.custom-after {
+  background-image: radial-gradient(circle, currentcolor 1px, transparent 1.5px);
+  background-position: bottom;
+  background-size: 1ex 3.5px;
+  background-repeat: space no-repeat;
+  content: '';
+  flex-grow: 1;
+  height: 1.1em;
+  width: 1em;
+  order: 2;
+  color: #9d9d9d;
+}
