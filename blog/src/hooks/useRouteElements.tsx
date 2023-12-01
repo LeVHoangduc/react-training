@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router-dom'
 
-import PostsWrapper from '@components/PostsWrapper'
-import PostWrapper from '@components/PostWrapper'
+import PostsWrapper from '@pages/Posts/index'
+import PostWrapper from '@pages/PostDetail/index'
 import Introduction from '@pages/Introduction'
 import About from '@pages/About/About'
 import ErrorPage from '@pages/Error'
