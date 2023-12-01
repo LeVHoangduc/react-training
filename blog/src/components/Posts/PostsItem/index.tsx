@@ -21,7 +21,7 @@ export default function PostsItem({ postsData }: PostsItemProps): JSX.Element {
 
   const posts: JSX.Element[] = []
 
-  postsData.map((post, i) => {
+  postsData.forEach((post, i) => {
     const dateString = post.date
 
     // Create a Date object by parsing the date string

@@ -22,6 +22,7 @@ export default function SideBarFooter() {
       <a title='Email' href='mailto://levhoangduc@gmail.com' className='inline-block mr-2 lg:w-6'>
         <img src='/assets/icons/mail.svg' alt='mail' />
       </a>
+
       <p className='mt-2 mb-4 text-[0.7rem] text-custom-medium-gray font-fira'>
         powered by{' '}
         <a href='https://blogtechnologique.netlify.app/' className='text-custom-white hover:underline'>
