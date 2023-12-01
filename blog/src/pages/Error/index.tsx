@@ -1,7 +1,7 @@
-import useTheme from '@hooks/useTheme'
+import useThemeContext from '@hooks/useThemeContext'
 
 export default function ErrorPage() {
-  const { isDark } = useTheme()
+  const { isDark } = useThemeContext()
 
   return (
     <div className={`flex justify-center items-center flex-col ${isDark ? 'text-custom-white' : 'text-custom-black'}`}>

@@ -1,10 +1,10 @@
 import { Link, NavLink } from 'react-router-dom'
 
-import useTheme from '@hooks/useTheme'
+import useThemeContext from '@hooks/useThemeContext'
 import { moon, sun } from '@constants/assets'
 
 export default function SideBar() {
-  const { isDark, setIsDark } = useTheme()
+  const { isDark, setIsDark } = useThemeContext()
 
   const handleSetDark = () => {
     setIsDark(!isDark)

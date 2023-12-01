@@ -1,13 +1,12 @@
-import { MarkdownData } from 'src/App'
-
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { createPortal } from 'react-dom'
 
-import useTheme from '@hooks/useTheme'
+import useThemeContext from '@hooks/useThemeContext'
+import usePostsContext from '@hooks/usePostsContext'
 
-import PostContext from '@contexts/postContext'
+import { MarkdownData } from '@contexts/postsContext'
 
 import CodeBlock from '@components/CodeBlock'
 import CommentButton from '@components/CommentButton'
@@ -19,29 +18,26 @@ interface PostProps {
 }
 
 export default function Post({ postId }: PostProps) {
-  const postContext = useContext(PostContext)
+  const { posts } = usePostsContext()
 
   const [loading, setLoading] = useState<boolean>(true)
   const [postContent, setPostContent] = useState<MarkdownData | null>(null)
 
-  const { isDark } = useTheme()
+  const { isDark } = useThemeContext()
 
   const currentURL = window.location.href
 
   const classContainer = '.main-layout'
 
   useEffect(() => {
-    if (postContext) {
-      const { posts } = postContext
-      const data = posts?.find((post) => post.id === Number(postId))
+    const data = posts.find((post) => post.id === Number(postId))
 
-      if (data) setPostContent(data)
+    data && setPostContent(data)
 
-      setTimeout(() => {
-        setLoading(false)
-      }, 200)
-    }
-  }, [postContext, postId])
+    setTimeout(() => {
+      setLoading(false)
+    }, 200)
+  }, [postId, posts])
 
   if (loading) return <>Loading....</>
 

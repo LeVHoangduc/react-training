@@ -3,7 +3,7 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { materialDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-import useTheme from '@hooks/useTheme'
+import useThemeContext from '@hooks/useThemeContext'
 
 import { copyIcon, pasteIcon } from '@constants/assets'
 interface CodeProps {
@@ -13,7 +13,7 @@ interface CodeProps {
 
 export default function CodeBlock({ children, className }: CodeProps) {
   const [copied, setCopied] = useState(false)
-  const { isDark } = useTheme()
+  const { isDark } = useThemeContext()
 
   const language = className ? className.replace(/language-/, '') : ''
 

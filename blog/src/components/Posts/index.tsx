@@ -1,9 +1,9 @@
-import PostContext from '@contexts/postContext'
-import useTheme from '@hooks/useTheme'
-import ErrorPage from '@pages/Error'
-import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { MarkdownData } from 'src/App'
+
+import usePostsContext from '@hooks/usePostsContext'
+import useThemeContext from '@hooks/useThemeContext'
+
+import { MarkdownData } from '@contexts/postsContext'
 
 interface PostsProps {
   tag: string | null
@@ -13,15 +13,9 @@ interface PostsProps {
 type yearCurrent = string | null
 
 export default function Posts({ tag, filter }: PostsProps) {
-  const postContext = useContext(PostContext)
+  const { posts } = usePostsContext()
 
-  const { isDark } = useTheme()
-
-  if (!postContext) {
-    return <ErrorPage />
-  }
-
-  const { posts } = postContext
+  const { isDark } = useThemeContext()
 
   let postsData: MarkdownData[] = []
 
