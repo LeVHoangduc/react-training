@@ -5,7 +5,7 @@ import { materialDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles
 
 import useThemeContext from '@hooks/useThemeContext'
 
-import { copyIcon, pasteIcon } from '@constants/assets'
+import { COPY_ICON, PASTE_ICON } from '@constants/assets'
 interface CodeProps {
   children: string
   className: string
@@ -26,14 +26,12 @@ export default function CodeBlock({ children, className }: CodeProps) {
 
   return (
     <div className='relative'>
-      <>
-        <CopyToClipboard text={children.toString()} onCopy={() => setCopied(true)}>
-          <img src={`${copied ? pasteIcon : copyIcon}`} alt='icon' className='w-6 absolute top-4 right-4 z-10' />
-        </CopyToClipboard>
-        <SyntaxHighlighter language={language} style={isDark ? materialDark : oneLight}>
-          {children}
-        </SyntaxHighlighter>
-      </>
+      <CopyToClipboard text={children.toString()} onCopy={() => setCopied(true)}>
+        <img src={`${copied ? PASTE_ICON : COPY_ICON}`} alt='icon' className='w-6 absolute top-4 right-4 z-10' />
+      </CopyToClipboard>
+      <SyntaxHighlighter language={language} style={isDark ? materialDark : oneLight}>
+        {children}
+      </SyntaxHighlighter>
     </div>
   )
 }

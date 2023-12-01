@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
-import ReactMarkdown from 'react-markdown'
-import { createPortal } from 'react-dom'
+import { Navigate } from 'react-router-dom'
 
 import useThemeContext from '@hooks/useThemeContext'
 import usePostsContext from '@hooks/usePostsContext'
 
 import { MarkdownData } from '@contexts/postsContext'
 
-import CodeBlock from '@components/CodeBlock'
-import CommentButton from '@components/CommentButton'
-import LikeButton from '@components/LikeButton'
 import TOC from '@components/TOC'
+import Portal from '@components/Portal'
+import ConvertMarkdown from '@components/ConvertMarkdown'
+
+import PostTag from './PostTag'
+import FacebookIntegration from '@components/FacebookIntegration'
 
 interface PostProps {
   postId: string
@@ -19,13 +19,10 @@ interface PostProps {
 
 export default function Post({ postId }: PostProps) {
   const { posts } = usePostsContext()
+  const { isDark } = useThemeContext()
 
   const [loading, setLoading] = useState<boolean>(true)
   const [postContent, setPostContent] = useState<MarkdownData | null>(null)
-
-  const { isDark } = useThemeContext()
-
-  const currentURL = window.location.href
 
   const classContainer = '.main-layout'
 
@@ -43,39 +40,16 @@ export default function Post({ postId }: PostProps) {
 
   if (!postContent) return <Navigate to='/404' />
 
-  const components = {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    code: ({ children, className }: any) => {
-      // Use your CodeBlock component here
-      return <CodeBlock className={className}>{children}</CodeBlock>
-    }
-  }
-
   return (
-    <>
+    <div>
       <p className={`mb-2 text-[2rem] ${isDark ? 'text-custom-white' : 'text-custom-black'}`}>{postContent.title}</p>
       <div className='flex flex-row items-center justify-between mb-4'>
         <p className='text-custom-light-gray'>{postContent.date}</p>
-        <ul>
-          {postContent.tags.map((tag, i) => (
-            <li key={i} className='inline-block ml-3 px-[0.7rem] bg-custom-gray rounded-[0.2rem] cursor-pointer'>
-              <Link to={`/posts?tag=${tag}`} className='text-[0.7rem] text-custom-black text-center'>
-                {tag}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <PostTag postContent={postContent} />
       </div>
-      <ReactMarkdown className={`custom-markdown ${isDark ? '' : 'light'}`} components={components}>
-        {postContent.content}
-      </ReactMarkdown>
-      {createPortal(<TOC selector='.content' />, document.querySelector(classContainer) as HTMLElement)}
-      <div className={`p-4 rounded-md ${isDark ? 'bg-white' : ''}`}>
-        <div className='flex gap-4'>
-          <LikeButton className={'flex'} href={currentURL} />
-        </div>
-        <CommentButton />
-      </div>
-    </>
+      <ConvertMarkdown postContent={postContent} />
+      <Portal component={<TOC selector='.content' />} className={classContainer} />
+      <FacebookIntegration />
+    </div>
   )
 }

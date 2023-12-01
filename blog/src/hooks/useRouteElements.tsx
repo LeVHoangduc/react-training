@@ -5,6 +5,8 @@ import About from '@pages/About/About'
 import ErrorPage from '@pages/Error'
 import PostList from '@pages/PostList'
 import PostDetail from '@pages/PostDetail'
+import PostRecent from '@pages/PostRecent'
+import PostRelated from '@pages/PostRelated'
 
 export default function useRouteElements() {
   const elements = useRoutes([
@@ -22,7 +24,11 @@ export default function useRouteElements() {
     },
     {
       path: '/recent',
-      element: <PostList filter='recent' />
+      element: <PostRecent />
+    },
+    {
+      path: '/related/',
+      element: <PostRelated />
     },
     {
       path: '/post/:id',

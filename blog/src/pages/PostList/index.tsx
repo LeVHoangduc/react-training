@@ -1,15 +1,9 @@
-import { useLocation } from 'react-router-dom'
+import usePostsContext from '@hooks/usePostsContext'
+
 import Posts from '@components/Posts'
 
-interface PostListProps {
-  filter?: string
-}
+export default function PostList() {
+  const { posts } = usePostsContext()
 
-export default function PostList({ filter }: PostListProps) {
-  const location = useLocation()
-  const searchParams = new URLSearchParams(location.search)
-
-  const tag = searchParams.get('tag')
-
-  return <Posts tag={tag} filter={filter} />
+  return <Posts postsData={posts} titlePage='Posts' />
 }
