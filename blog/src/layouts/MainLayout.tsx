@@ -1,4 +1,4 @@
-import useTheme from '@hooks/useTheme'
+import useThemeContext from '@hooks/useThemeContext'
 import SideBar from './SideBar'
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function MainLayout({ children }: Props) {
-  const { isDark } = useTheme()
+  const { isDark } = useThemeContext()
 
   return (
     <div className={`main-layout ${isDark ? '' : 'light'}`}>

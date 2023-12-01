@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import useTheme from '@hooks/useTheme'
+import useThemeContext from '@hooks/useThemeContext'
 
 interface TOCprops {
   selector: string
@@ -9,7 +9,7 @@ export default function TOC({ selector }: TOCprops) {
   const [currentHeadingID, setCurrentHeadingID] = useState<string | undefined>()
   const [headings, setHeadings] = useState<HTMLHeadElement[]>([])
 
-  const { isDark } = useTheme()
+  const { isDark } = useThemeContext()
 
   const content = document.querySelector(selector)?.parentElement
 

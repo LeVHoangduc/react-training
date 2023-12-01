@@ -1,7 +1,7 @@
-import useTheme from '@hooks/useTheme'
+import useThemeContext from '@hooks/useThemeContext'
 
 export default function Introduction() {
-  const { isDark } = useTheme()
+  const { isDark } = useThemeContext()
 
   return (
     <div className={`custom-markdown ${isDark ? '' : 'light'}`}>
