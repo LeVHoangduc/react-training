@@ -1,11 +1,11 @@
 import { Like } from 'react-facebook'
 
-interface LikeButtonProps {
+interface FacebookLikeProps {
   className: string
   href: string
 }
 
-export default function LikeButton({ className, href }: LikeButtonProps) {
+export default function FacebookLike({ className, href }: FacebookLikeProps) {
   return (
     <>
       <div className={className}>
